@@ -2,11 +2,11 @@ from .dark_validator import validate_ingredients
 
 
 def dark_spell_allowed_ingredients() -> list[str]:
-    return ["earth", "air", "fire", "water"]
+    return ["bats", "frogs", "arsenic", "eyeball"]
 
 
 def dark_spell_record(spell_name: str, ingredients: str) -> str:
-    result = validate_ingredients(ingredients)
-    if "INVALID" in result:
-        return f"Spell rejected: {spell_name} ({result})"
-    return f"Spell recorded: {spell_name} ({result})"
+    valid_result = validate_ingredients(ingredients)
+    if "INVALID" in valid_result:
+        return f"Spell rejected: {spell_name} ({valid_result})"
+    return f"Spell recorded: {spell_name} ({valid_result})"
